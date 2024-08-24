@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+{%block title%}Вход{%endblock%}
+{%block content%}
+<div class="parent-div">
+    <div class="centered-div">
+        <div class="block">
+            <div class="trio3">
+                <form method='post' action={% url 'login' %}>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class = "space">...
+                    </div>
+                    <button class = "button" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+        <div class = "block">
+            <div class = "block2">
+                <h4>Тестирование доступно только авторизованным пользователям.</h4>
+                <h4>Для получения прав доступа обратитесь к своему непосредственному руководителю.</h4>
+                    <div class = "space">...
+                    </div>
+                    <div class = "space">...
+                    </div>
+                   <div class = "space">...
+                    </div>
+                    <div class = "space">...
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

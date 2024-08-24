@@ -1,0 +1,10 @@
+{%extends "base_generic.html"%}
+{%block title%}Результат{%endblock%}
+{%block content%}
+    <div class = "block"><div class = "trio2">
+        <h1>Результаты</h1>
+        <h3>Общий балл: {{total_score}} из {{i}} </h3>
+        <p>Дата и время прохождения теста:</p> <p> {{ date_attempted }} </p>
+        <p>Номер тестирования:  {{test_session_id}} </p>
+    </div>
+{% endblock %}

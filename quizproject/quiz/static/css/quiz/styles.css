@@ -1,0 +1,303 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Consolas";
+    background-color: white;
+    color: #0D0141;
+    font-size: 28px;
+    align-items: center;
+    }
+.wrapper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: thin solid grey;
+    }
+.centered-div {
+    background-color: white;
+    }
+
+
+a {
+    text-decoration: none;
+   }
+.logo {
+    width: 70px;
+    height: 70px;
+    background-image: url("logo6.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    }
+main {
+    padding: 20px;
+    text-align: left;
+    flex: 1 1 auto;
+    }
+.div2{
+    border-radius: 20px 20px 25px 25px;
+    padding: 10px 20px;
+    width: 80%;
+    }
+.div3 {
+    padding: 10px 20px;
+    width: 98%;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 2%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    }
+.div4 {
+    width: 100%;
+    height: 300px;
+    background-image: url("image8.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    }
+.block, .block3 {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    }
+.block2 {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    width: 75%;
+    }
+.block4 {
+    display: none;
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px 20px 25px 25px;
+    }
+.trio{
+    justify-content: space-around;
+    border-radius: 20px 20px 25px 25px;
+    padding: 10px 20px;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+.trio2{
+    align-items: center;
+    background-color: white;
+    border-radius: 20px 20px 25px 25px;
+    padding: 10px 20px;
+    width: 700px;
+    height: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+.trio3{
+    justify-content: center;
+    border-radius: 20px 20px 25px 25px;
+    padding: 10px 20px;
+    width: 400px;
+    height: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+p1{
+    color: red;
+    }
+p2{
+    color: blue;
+    }
+h1{
+    font-size: 60px;
+    }
+h3{
+    font-size: 50px;
+    color:blue;
+    }
+h4{
+    font-size: 30px;
+    color: #132B8B;
+    line-height: 0.9em
+    }
+.link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #0D0141;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    }
+.link:hover {
+    color: #6C52CB;
+    }
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color: #0D0141;
+    border: 1px solid grey;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    }
+.button:hover {
+    background-color:  #5F42CD;
+    cursor: pointer;
+    transform: translateY(-2px);
+    }
+footer {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    font-size: 20px;
+    border: 1px, grey;
+    background-color:  #0D0141;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 100%;
+    color: white;
+    }
+.f1{
+    color: white;
+    }
+.f1:hover {
+    color: #6C52CB;
+    }
+.f2{
+    color: white;
+    display: inline;
+    padding: 10px 70px;
+    }
+.drop_menu {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color: #0D0141;
+    border: 1px solid grey;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    justify-content: center;
+    align-items: center;
+  }
+.drop_menu:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+    cursor: pointer;
+    background-color: #5F42CD;
+  }
+.messages {
+    text-align: center;
+    color:red;
+    font-size: 60px;
+   }
+.drop_menu:hover > .small_menu{
+    opacity: 1;
+    transform: translateX(0%);
+    background-color: white;
+  }
+.small_menu {
+    position: absolute;
+    right: 0px;
+    transform: translateX(100%);
+    transition-duration: 1s;
+    border: 1px solid grey;
+    font-size: 20px;
+    border-radius: 15%;
+    width: 150px;
+    justify-content: center;
+    align-items: center;
+  }
+.arrow-down {
+    width: 33px;
+    height: 33px;
+    border: 2px solid #333;
+    border-left: 0;
+    border-top: 0;
+    transform: rotate(45deg);
+    }
+.go_upwards{
+    background-color: white;
+    font-size: 32px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    text-align: center;
+    position: fixed;
+    bottom: 80px;
+    right: 30px;
+    text-decoration: none;
+    color: #5F42CD;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    }
+.img{
+    position: absolute;
+    top: 200px;
+    right: 2px;
+    background-image: url("robotun.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 440px;
+    height: 700px;
+    }
+.space{
+    color: white;
+    }
+
+
+/*Применять свойства, когда экран шире, чем 1000px*/
+@media (min-width: 1000px)
+  {
+    .header1, .footer1
+    {
+        display: flex;
+    }
+    .header2, .footer2, .block4
+    {
+        display: none;
+    }
+  }
+/*Применять свойства, когда экран уже, чем 999px*/
+@media (max-width: 999px)
+  {
+    .header1, .footer1,  .img, .trio
+    {
+        display: none;
+    }
+    .header2,
+    {
+        display: grid;
+    }
+    .footer2
+    {
+        display: flex;
+        font-size: 15px;
+    }
+    p2, p1,  h2 {
+        font-size: 25px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    h4  {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    .block4 {
+        display: block;
+    }
+  }

@@ -1,0 +1,128 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{%block title%}{%endblock%}</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/quiz/styles.css' %}">
+
+    </head>
+    <body>
+    <div class = "wrapper">
+        <!----------------------------------------------------------------------header для широких экранов------------------->
+        <header class = "header1">
+            <div class="logo"> </div>
+            <div>
+                    <a href="{% url 'index' %}" class="link">К списку тестов</a>
+                </div>
+            <div>
+                {% if user.is_authenticated %}
+                    <p2>Сотрудник: {{ user.username }} </p2>
+                {% else %}
+                    <p1>ВХОД НЕ ВЫПОЛНЕН</p1>
+                {% endif %}
+            </div>
+
+            <div> <a href="{% url 'knowledge_base' %}" class="link"> База знаний </a> </div>
+
+            <div>
+                {%if user.is_authenticated %}
+                    <form method="post" action = "{% url 'logout'%}">
+                        {% csrf_token %}
+                        <button class="button" method="submit">
+                            Выйти
+                        </button>
+                    </form>
+                {%else%}
+                    <a href="{%url 'login'%}">
+                        <button class="button" method="submit">
+                        Войти
+                        </button>
+                    </a>
+                {%endif%}
+            </div>
+        </header>
+        <!------------------------------------------------------------------------------header для узких экранов------------------->
+        <header class = "header2">
+            <div class="logo"> </div>
+            <div>
+                {% if user.is_authenticated %}
+                    <p2>Сотрудник: {{ user.username }} </p2>
+                {% else %}
+                    <p1>ВХОД НЕ ВЫПОЛНЕН</p1>
+                {% endif %}
+            </div>
+            <div class = "drop_menu">
+                &#9776;
+                <div class="small_menu">
+                        <a href="{% url 'index' %}" class="link">К списку тестов</a>
+                        <a href="{% url 'knowledge_base' %}" class="link"> База знаний </a>
+            <div>
+                {%if user.is_authenticated %}
+                    <form method="post" action = "{% url 'logout'%}">
+                        {% csrf_token %}
+                        <button class="button" method="submit">
+                            Выйти
+                        </button>
+                    </form>
+                {%else%}
+                    <a href="{%url 'login'%}">
+                        <button class="button" method="submit">
+                        Войти
+                        </button>
+                    </a>
+                {%endif%}
+            </div>
+            </div>
+
+            </div>
+        </header>
+        <!---------------------------------------------------------------------------------------------main ------------------->
+        <main>
+            <div class="img"></div>
+
+            <div class="parent-div">
+                    {%if messages%}
+                        <ul class="messages">
+                            {%for message in messages%}
+                                <div {% if message.tags %} class="{{message.tags}}"{%endif%}>
+                                    {{message}}
+                                </div>
+                            {%endfor%}
+                        </ul>
+                    {%endif%}
+            </div>
+
+            <div class="div1">
+                {%block content%}{%endblock%}
+            </div>
+        </main>
+       <!----------------------------------------------------------------------footer для широких экранов------------------->
+        <footer class = "footer1">
+            <div class ="f1">
+                <div class ="f2"><a href="{% url 'knowledge_base' %}" class="f1"><button class="button">
+                    База знаний </button> </a></div>
+                <div class ="f2">
+                    Пожелания и предложения отправляйте на электронную почту: yuliya4050@mail.ru </div>
+                <div class ="f2">
+                    Телефон: +7 936 276 74 50 </div>
+	        </div>
+        </footer>
+
+        <!----------------------------------------------------------------------footer для узких экранов------------------->
+        <footer class = "footer2">
+            <div class ="f1">
+                <div class ="f2">
+                    yuliya4050@mail.ru</div>
+	        </div>
+                <div class ="f2"><a href="{% url 'knowledge_base' %}" class="f1"><button class="button">
+                    База знаний </button> </a></div>
+                <div class ="f2">
+                     +79362767450 </div>
+	        </div>
+        </footer>
+    </div>
+    </body>
+</html>

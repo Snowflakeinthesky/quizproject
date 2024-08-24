@@ -1,0 +1,35 @@
+{%extends "base_generic.html"%}
+{%block title%}Тесты{%endblock%}
+{%block content%}
+    <div class="img"></div>
+    <div class = "block">
+        <h1>Список тестов</h1>
+    </div>
+    <div class = "block">
+        {% for quiz in quizzes %}
+            <div class="trio">
+                <a href={% url 'quiz_detail' quiz.id %} class="link">
+                    <h2>{{quiz}}</h2>
+                </a>
+            </div>
+            <div class = "space">...
+            </div>
+        {%endfor%}
+    </div>
+    <div class = "block4">
+        {% for quiz in quizzes %}
+            <div class="block4">
+                <a href={% url 'quiz_detail' quiz.id %} class="link">
+                <h2>{{quiz}}</h2>
+                </a>
+            </div>
+        {%endfor%}
+    </div>
+    <div class = "block">
+        <div class = "block2">
+        <h4>Для прохождения теста необходимо выбрать только один правильный ответ.</h4>
+        <h4>Каждое прохождение теста фиксируется, результаты доступны руководителю.</h4>
+        </div>
+    </div>
+
+{%endblock%}
